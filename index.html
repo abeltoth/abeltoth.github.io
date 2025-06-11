@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abel Toth | Digital Identity Specialist</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="hero-background"></div>
+    <div id="packet-container"></div>
+
+    <nav>
+      <div class="logo">AT</div>
+      <button class="hamburger-menu" aria-label="Open Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#fingerprint-display">Fingerprint</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#turing-test-feature">Interactive Test</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <section id="hero">
+        <div id="hero-intro-title">Analyzing Signal...</div>
+        <section id="analysis">
+          <table id="analysis-table">
+            <tbody>
+              <tr id="row-user-agent">
+                <th>User Agent</th>
+                <td>
+                  <span id="fp-user-agent"></span
+                  ><i>Identifies your browser, version, and OS.</i>
+                </td>
+              </tr>
+              <tr id="row-resolution">
+                <th>Screen Geo</th>
+                <td>
+                  <span id="fp-resolution"></span
+                  ><i>Your screen's geometry and color depth.</i>
+                </td>
+              </tr>
+              <tr id="row-languages">
+                <th>Languages</th>
+                <td>
+                  <span id="fp-languages"></span
+                  ><i>Browser language preferences (e.g., en-US, en).</i>
+                </td>
+              </tr>
+              <tr id="row-hardware">
+                <th>Hardware</th>
+                <td>
+                  <span id="fp-hardware"></span
+                  ><i>Logical CPU cores and approximate device memory.</i>
+                </td>
+              </tr>
+              <tr id="row-render">
+                <th>Canvas Hash</th>
+                <td>
+                  <span id="fp-canvas"></span
+                  ><i>A unique hash from a hidden 2D graphic render.</i>
+                </td>
+              </tr>
+              <tr id="row-webgl">
+                <th>WebGL Info</th>
+                <td>
+                  <span id="fp-webgl"></span
+                  ><i
+                    >The specific GPU identified by the browser's 3D engine.</i
+                  >
+                </td>
+              </tr>
+              <tr id="row-plugins">
+                <th>Plugin Map</th>
+                <td>
+                  <span id="fp-plugins"></span
+                  ><i>The number of browser plugins installed.</i>
+                </td>
+              </tr>
+              <tr id="row-timezone">
+                <th>Timezone</th>
+                <td>
+                  <span id="fp-timezone"></span
+                  ><i>Regional data, useful for flagging anomalies.</i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <div id="hero-final-content">
+          <h1>
+            Signal Acquired.<br />Identity Vector: <span id="final-hash"></span>
+          </h1>
+          <p>
+            I'm Abel Toth. I build the systems that analyze these signals to
+            establish digital trust and prevent fraud.
+          </p>
+          <a href="#fingerprint-display" class="cta-button"
+            >View Fingerprint Data</a
+          >
+        </div>
+      </section>
+
+      <section id="fingerprint-display">
+        <h2>Initial Session Fingerprint</h2>
+        <p>
+          The following parameters were collected from your device upon loading
+          the page. This data is used to generate a unique, non-personally
+          identifiable signature for security purposes.
+        </p>
+        <table id="fingerprint-display-table">
+          <tbody>
+            <tr>
+              <th>User Agent</th>
+              <td><span id="fpd-user-agent"></span></td>
+            </tr>
+            <tr>
+              <th>Screen Geo</th>
+              <td><span id="fpd-resolution"></span></td>
+            </tr>
+            <tr>
+              <th>Languages</th>
+              <td><span id="fpd-languages"></span></td>
+            </tr>
+            <tr>
+              <th>Hardware</th>
+              <td><span id="fpd-hardware"></span></td>
+            </tr>
+            <tr>
+              <th>Canvas Hash</th>
+              <td><span id="fpd-canvas"></span></td>
+            </tr>
+            <tr>
+              <th>WebGL Renderer</th>
+              <td><span id="fpd-webgl"></span></td>
+            </tr>
+            <tr>
+              <th>Plugin Map</th>
+              <td><span id="fpd-plugins"></span></td>
+            </tr>
+            <tr>
+              <th>Timezone</th>
+              <td><span id="fpd-timezone"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="turing-test-feature">
+        <h2>Interactive Analysis: Human or Bot?</h2>
+        <div class="feature-container">
+          <div class="interactive-zone">
+            <p>
+              My work involves analyzing subtle behavioral signals. Complete the
+              tasks below, and I'll analyze the patterns to determine if your
+              interaction appears human or automated.
+            </p>
+
+            <div id="drag-challenge-container">
+              <p><b>Task 1:</b> Drag the Data Packet to the Processing Zone.</p>
+              <div id="drag-item" draggable="true">Data Packet</div>
+              <div id="drop-zone"><p>Processing Zone</p></div>
+            </div>
+
+            <p>
+              <b>Task 2:</b> Move your mouse naturally within the box below.
+            </p>
+            <div id="mouse-box-feature">
+              <canvas id="mouse-canvas-feature"></canvas>
+            </div>
+
+            <p><b>Task 3:</b> Type the word 'security' in the field below.</p>
+            <input
+              type="text"
+              id="typing-test-feature"
+              placeholder="Type 'security' here"
+            />
+            <br />
+            <button id="run-analysis-btn" class="cta-button">
+              Run Analysis
+            </button>
+            <a href="#" id="honeypot" aria-hidden="true"></a>
+          </div>
+          <div class="verdict-zone">
+            <div id="verdict-box">
+              <h3>ANALYSIS COMPLETE</h3>
+              <p>Interaction Path: <span id="verdict-drag"></span></p>
+              <p>Mouse Behavior: <span id="verdict-mouse"></span></p>
+              <p>Typing Pattern: <span id="verdict-typing"></span></p>
+              <p><b>Typing Cadence (ms between keys):</b></p>
+              <div id="typing-chart-container"></div>
+              <h3>CONCLUSION: <span id="verdict-conclusion"></span></h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Featured Projects</h2>
+        <p
+          style="
+            text-align: center;
+            max-width: 700px;
+            margin: -20px auto 40px auto;
+            color: var(--slate);
+          "
+        >
+          The following projects highlight my key contributions during my time
+          at SEON, where I focused on advancing their core device intelligence
+          and fraud prevention capabilities.
+        </p>
+
+        <div class="projects-grid">
+          <div class="project-card">
+            <a
+              href="https://github.com/seontechnologies/seon-web-sdk-public"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3>Device Intelligence Web SDK</h3>
+              <p>
+                Contributed to the research and development of a web SDK that
+                collects over 100 data points. Implemented features for remote
+                access detection, behavioral signals, and various spoofing
+                detections (geolocation, OS, user-agent, device farms).
+              </p>
+              <ul class="project-tech">
+                <li>TypeScript</li>
+                <li>Browser APIs</li>
+              </ul>
+            </a>
+          </div>
+
+          <div class="project-card">
+            <a
+              href="https://docs.seon.io/getting-started/device-intelligence"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3>High-Performance Backend Service</h3>
+              <p>
+                Designed and implemented a high-performance backend service
+                handling 6-8 million transactions daily, focusing on fraud
+                detection and prevention for our largest clients.
+              </p>
+              <ul class="project-tech">
+                <li>AWS</li>
+                <li>Node.js</li>
+                <li>TypeScript</li>
+                <li>PostgreSQL</li>
+              </ul>
+            </a>
+          </div>
+
+          <div class="project-card">
+            <a
+              href="https://docs.seon.io/whatsnew/introducing-true-device-id"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <h3>True Device ID</h3>
+              <p>
+                Worked on an advanced system that analyzes session data to
+                accurately identify devices, even when users attempt to conceal
+                their identity, by processing browser, device, and network
+                signals.
+              </p>
+              <ul class="project-tech">
+                <li>Python</li>
+                <li>Redis</li>
+                <li>AWS</li>
+              </ul>
+            </a>
+          </div>
+
+          <div class="project-card">
+            <h3>Real-time Streaming Fraud Detection</h3>
+            <p>
+              Developed a system to analyze user data as it streams to detect
+              suspicious activity as it happens, including VPN connections,
+              bots, and session hijacking attempts.
+            </p>
+            <ul class="project-tech">
+              <li>AWS</li>
+              <li>Nest.js</li>
+              <li>TypeScript</li>
+              <li>Kafka</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2>About Me</h2>
+        <div class="about-container">
+          <div class="about-text">
+            <p>
+              My fascination isn't just with the data, but with the puzzle it
+              represents. For over 5 years, I've been on the front lines of
+              digital security, building systems that protect businesses and
+              their users from sophisticated threats. My work is driven by a
+              passion for creative problem-solving and a deep respect for user
+              privacy.
+            </p>
+          </div>
+          <div class="about-image">
+            <div class="image-wrapper">
+              <img src="me.jpg" alt="Me with my wife" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>What's Next?</h2>
+        <p>
+          I'm always open to discussing new projects, creative ideas, or
+          opportunities to be part of an ambitious team. Feel free to reach out
+          if you have a question or just want to connect.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:abeltoth7@gmail.com" class="cta-button">Email Me</a>
+          <a
+            href="https://www.linkedin.com/in/abel-toth"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cta-button"
+            >LinkedIn</a
+          >
+        </div>
+      </section>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
